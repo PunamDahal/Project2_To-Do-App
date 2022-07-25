@@ -1,0 +1,178 @@
+:root{
+    --maroon:#800000;
+    --maroon-primary:#330000;
+    --maroon-secondary:#cd0000;
+    --teal:#008080;
+    --teal-primary:#003333;
+    --teal-secondary:#00cdcd;
+    --blue:#003153;
+    --blue-primary:#001421;
+    --blue-secondary:#004e85;
+    --black:#000;
+    --white:#fff;
+    --green:#018a31;
+    --red:#c90606;
+    --title-color:var(var(--red));
+    --background-color:var(--white);
+    --edit-color:var(--green);
+    --delete-color:var(--red);
+    --text-color:var(--black);
+    animation: colorchange infinite;
+    animation-timing-function: 15s;
+    animation-duration: 60s;
+}
+@keyframes colorchange{
+    0%{
+        --background-color:var(--white);
+        --edit-color: var(--green) ;
+        --delete-color: var(--red);
+        --text-color:var(--black);
+        --title-color:var(--red);
+
+    }
+   25%
+    {
+         --background-color:var(--white);
+        --edit-color:var(--teal-secondary);
+        --delete-color:var(--teal-primary);
+        --text-color:var(--teal);
+        --title-color:var(var(--teal));
+
+    }
+    50%{
+        --background-color:var(--white);
+        --edit-color:var(--maroon-secondary);
+        --delete-color:var(--maroon-primary);
+        --text-color:var(--maroon);
+        --title-color:var(var(--maroon));
+
+       
+    }
+    100%
+    {
+        --background-color:var(--white);
+        --edit-color:var(--blue-secondary);
+        --delete-color:var(--blue-primary);
+        --text-color:var(--blue);
+        --title-color:var(var(--blue));
+
+    }
+    }
+body{
+    background-color: var(--gray);
+    font-family: sans-serif;
+    color: var(--text-color);
+}
+/* ----------title----------- */
+.container{
+    margin: auto;
+    width:550px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top:45px;
+    padding-right: 8%;
+    padding-left: 8%;
+ } 
+.title{
+    color: var(--title-color);
+    opacity: 0.5;
+}
+.firstcircle{
+    height: 15px;
+    width: 15px;
+    border-radius: 26px;
+background: var(--teal);
+box-shadow:  5px -5px 9px var(--teal-primary),
+             -5px 5px 9px var(--teal-secondary);  
+             cursor: pointer;
+   }
+.secondcircle{
+    height: 15px;
+    width: 15px;
+ border-radius: 26px;
+ background: var(--maroon);
+ box-shadow:  5px -5px 9px var(--maroon-primary),
+             -5px 5px 9px var(--maroon-secondary);
+             cursor: pointer;  
+}
+
+.thirdcircle{
+    height: 15px;
+    width: 15px;
+    border-radius: 26px;
+    background: var(--blue);
+    box-shadow:  5px -5px 9px var(--blue-primary),
+                 -5px 5px 9px var(--blue-secondary);  
+                 cursor: pointer;
+
+   }
+   /* ----------------todo insert/list---------- */
+
+#editing-todo{
+color: var(--text-color);
+margin-bottom: 8px;
+padding: 8px 20px;
+background: var(--white);
+border: 1px solid var(--black);
+}
+.todo-section{
+    width: 550px;
+    margin: 15px auto;
+    background: var(--white);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 25px 50px 0 rgba(0,0,0,0.1);
+}
+
+#todo{
+    width: 100%;
+    padding:1rem 0rem 1rem 0rem;
+    margin-bottom: 10px;
+    border: 1px;
+    border-color: var(--edit-color);
+}
+
+#todo::placeholder{
+    padding-inline-start: 1rem;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+ #todo-list{
+    padding: 0;
+    width: 100%;
+    list-style: none;
+}
+
+#todo-list li{
+    padding: 1rem 1rem;
+}
+
+#todo-list .todo-content{
+    display: flex;
+    justify-content: space-between;
+}
+/* ------------icons--------- */
+.edit,
+ .delete{
+    cursor: pointer;
+}
+
+.edit{
+    color: var(--edit-color);
+}
+
+.delete{
+    color:var(--delete-color);
+}
+
+.cancel{
+    margin-bottom: 8px;
+    padding: 8px 20px;
+    background: var(--white);
+    color: var(--text-color);
+    border: 1px solid var(--delete-color);
+}
+/* -----------complete-------- */
